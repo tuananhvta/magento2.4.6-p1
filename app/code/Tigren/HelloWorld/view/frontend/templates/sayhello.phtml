@@ -1,0 +1,25 @@
+<?php
+/**
+ * @author    Tigren Solutions <info@tigren.com>
+ * @copyright Copyright (c) 2022 Tigren Solutions <https://www.tigren.com>. All rights reserved.
+ * @license   Open Software License ("OSL") v. 3.0
+ */
+
+$productCollection = $block->getProductCollection();
+
+
+?>
+
+<div class="container signin">
+    <p>Hello world</p>
+    <p><?= $block->getCustomData() ?></p>
+
+    <div class="product-list">
+        <?php foreach ($productCollection as $product): ?>
+            <div class="product">
+                <h2><?= $block->escapeHtml($product->getName()) ?></h2>
+                <p>Price: $<?= $block->escapeHtml($product->getPrice()) ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
